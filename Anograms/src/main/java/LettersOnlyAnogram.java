@@ -41,10 +41,13 @@ public class LettersOnlyAnogram {
 
 		char[] wordArray = word.toString().toCharArray();
 
-		StringBuilder reversedChars = new StringBuilder("");
-		for (Character c : wordArray) {
-			if (!Character.isLetter(c))
-				reversedWordLettersOnly.insert(word.indexOf(c.toString()), c);
+		StringBuilder reversedChars = reversedWordLettersOnly;
+		for (int i = 0; i < wordArray.length; i++) {
+			if (!Character.isLetter(wordArray[i]))
+				{
+				Character j = (Character) wordArray[i];
+				reversedChars.insert(word.indexOf(j.toString()), j);
+				}
 		}
 
 		return reversedChars;
