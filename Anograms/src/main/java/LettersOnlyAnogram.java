@@ -1,5 +1,5 @@
 
-public class LettersOnlyAnogram {
+public class LettersOnlyAnagram {
 
 	private String reverseLettersOnly(String inputString) {
 
