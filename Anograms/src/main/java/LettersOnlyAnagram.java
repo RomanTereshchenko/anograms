@@ -1,5 +1,5 @@
 
-public class LettersOnlyAnogram {
+public class LettersOnlyAnagram {
 
 	private String reverseLettersOnly(String inputString) {
 
@@ -8,14 +8,13 @@ public class LettersOnlyAnogram {
 
 			StringBuilder word = new StringBuilder(words[i]);
 			StringBuilder wordLettersOnly = selectLetters(word);
-			StringBuilder reversedWordLettersOnly = reverseLetters(wordLettersOnly);
+			StringBuilder reversedWordLettersOnly = reverseLettersOnly(wordLettersOnly);
 			StringBuilder reversedWord = insertNonLetters(reversedWordLettersOnly, word);
 
 			words[i] = reversedWord.toString();
 		}
-
-		String reversedLettersString = String.join(" ", words);
-		return reversedLettersString;
+		
+		return String.join(" ", words);
 	}
 
 	private StringBuilder selectLetters(StringBuilder word) {
@@ -31,22 +30,21 @@ public class LettersOnlyAnogram {
 		return selectedLetters;
 	}
 
-	private StringBuilder reverseLetters(StringBuilder wordLettersOnly) {
+	private StringBuilder reverseLettersOnly(StringBuilder wordLettersOnly) {
 
-		StringBuilder reversedLettersOnly = wordLettersOnly.reverse();
-		return reversedLettersOnly;
+		return wordLettersOnly.reverse();
 	}
 
 	private StringBuilder insertNonLetters(StringBuilder reversedWordLettersOnly, StringBuilder word) {
 
-		char[] wordArray = word.toString().toCharArray();
+		char[] wordAsArrayOfChars = word.toString().toCharArray();
 
 		StringBuilder reversedChars = reversedWordLettersOnly;
-		for (int i = 0; i < wordArray.length; i++) {
-			if (!Character.isLetter(wordArray[i]))
+		for (int i = 0; i < wordAsArrayOfChars.length; i++) {
+			if (!Character.isLetter(wordAsArrayOfChars[i]))
 				{
-				Character j = (Character) wordArray[i];
-				reversedChars.insert(word.indexOf(j.toString()), j);
+				Character j = (Character) wordAsArrayOfChars[i];
+				reversedChars.insert(i, wordAsArrayOfChars[i]);
 				}
 		}
 
@@ -55,7 +53,7 @@ public class LettersOnlyAnogram {
 
 	public static void main(String[] args) {
 
-		LettersOnlyAnogram example = new LettersOnlyAnogram();
+		LettersOnlyAnagram example = new LettersOnlyAnagram();
 
 		System.out.println(example.reverseLettersOnly("a1bcd efg!h"));
 
