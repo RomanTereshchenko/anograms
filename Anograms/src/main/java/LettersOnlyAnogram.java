@@ -14,8 +14,7 @@ public class LettersOnlyAnagram {
 			words[i] = reversedWord.toString();
 		}
 
-		String reversedLettersString = String.join(" ", words);
-		return reversedLettersString;
+		return reversedLettersString = String.join(" ", words);
 	}
 
 	private StringBuilder selectLetters(StringBuilder word) {
