@@ -32,8 +32,7 @@ public class LettersOnlyAnagram {
 
 	private StringBuilder reverseLetters(StringBuilder wordLettersOnly) {
 
-		StringBuilder reversedLettersOnly = wordLettersOnly.reverse();
-		return reversedLettersOnly;
+		return wordLettersOnly.reverse();
 	}
 
 	private StringBuilder insertNonLetters(StringBuilder reversedWordLettersOnly, StringBuilder word) {
