@@ -1,7 +1,8 @@
+package com.foxminded.javaspring.anagrams;
 
 public class LettersOnlyAnagram {
 
-	private String reverseLettersOnly(String inputString) {
+	String reverseLettersOnly(String inputString) {
 
 		String[] words = inputString.split(" ");
 		for (int i = 0; i < words.length; i++) {
@@ -13,7 +14,7 @@ public class LettersOnlyAnagram {
 
 			words[i] = reversedWord.toString();
 		}
-		
+
 		return String.join(" ", words);
 	}
 
@@ -41,11 +42,9 @@ public class LettersOnlyAnagram {
 
 		StringBuilder reversedChars = reversedWordLettersOnly;
 		for (int i = 0; i < wordAsArrayOfChars.length; i++) {
-			if (!Character.isLetter(wordAsArrayOfChars[i]))
-				{
-				Character j = (Character) wordAsArrayOfChars[i];
+			if (!Character.isLetter(wordAsArrayOfChars[i])) {
 				reversedChars.insert(i, wordAsArrayOfChars[i]);
-				}
+			}
 		}
 
 		return reversedChars;
@@ -55,7 +54,8 @@ public class LettersOnlyAnagram {
 
 		LettersOnlyAnagram example = new LettersOnlyAnagram();
 
-		System.out.println(example.reverseLettersOnly("a1bcd efg!h"));
+		String input = "a1bcd efg!h";
+		System.out.println(example.reverseLettersOnly(input));
 
 	}
 
